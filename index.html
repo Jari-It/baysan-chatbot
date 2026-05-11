@@ -199,9 +199,9 @@ function addDownloadCard() {
   if (isPlaceholder) {
     console.warn('[chatbot] CONFIG.downloadUrl no configurada — el botón de descarga está desactivado.');
   }
-  const linkAttrs = isPlaceholder
+    const linkAttrs = isPlaceholder
     ? 'href="#" onclick="return false" style="opacity:.45;cursor:not-allowed"'
-    : 'href="' + escapeAttr(url) + '" target="_blank" rel="noopener"';
+    : 'href="' + escapeAttr(url) + '" download="' + escapeAttr(CONFIG.downloadFilename) + '" target="_blank" rel="noopener"';
   card.innerHTML =
     '<div class="file-badge">' +
     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>' +
