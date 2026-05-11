@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="format-detection" content="telephone=no">
+<meta name="description" content="Escanea, deja tu email y descarga al instante la presentación corporativa de Baysan Quality.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Baysan Quality — Presentación corporativa">
+<meta property="og:description" content="Escanea, deja tu email y descarga al instante la presentación corporativa de Baysan Quality.">
+<meta property="og:image" content="https://baysanquality.com/wp-content/uploads/2019/08/logo-baysan-ok.png">
+<meta property="og:image:alt" content="Baysan Quality">
+<meta property="og:url" content="https://eventos.baysanquality.com/">
+<meta property="og:site_name" content="Baysan Quality">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Baysan Quality — Presentación corporativa">
+<meta name="twitter:description" content="Escanea, deja tu email y descarga al instante la presentación corporativa de Baysan Quality.">
+<meta name="twitter:image" content="https://baysanquality.com/wp-content/uploads/2019/08/logo-baysan-ok.png">
+<title>Baysan Quality — Atención al cliente</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{--baysan-red:#C22026;--baysan-red-bright:#D42A30;--baysan-red-dark:#9A1A1E;--baysan-red-soft:#C2202612;--baysan-red-glow:#C2202630;--baysan-black:#111;--baysan-white:#FFF;--baysan-offwhite:#F6F6F7;--baysan-gray-100:#EEEEEF;--baysan-gray-200:#D9D9DC;--baysan-gray-400:#909098;--baysan-gray-600:#5E5E66;--baysan-gray-800:#2E2E34;--font-heading:'Montserrat','Segoe UI',sans-serif;--font-body:'Source Sans 3','Segoe UI',sans-serif;--chat-max-width:460px;--radius:14px;--radius-sm:10px}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  html,body{height:100%;overflow:hidden}
+  body{font-family:var(--font-body);background:var(--baysan-black);color:var(--baysan-gray-800);display:flex;align-items:center;justify-content:center;min-height:100vh;min-height:100dvh;-webkit-font-smoothing:antialiased}
+  body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(194,32,38,.08) 0%,transparent 55%),radial-gradient(ellipse at 50% 100%,rgba(0,0,0,.95) 0%,transparent 70%),var(--baysan-black);z-index:0}
+  body::after{content:'';position:fixed;inset:0;opacity:.04;background-image:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(255,255,255,.15) 2px,rgba(255,255,255,.15) 3px),repeating-linear-gradient(90deg,transparent,transparent 2px,rgba(255,255,255,.08) 2px,rgba(255,255,255,.08) 3px);pointer-events:none;z-index:0}
+  .chat-container{position:relative;z-index:1;width:100%;max-width:var(--chat-max-width);height:100vh;height:100dvh;max-height:740px;display:flex;flex-direction:column;background:var(--baysan-white);border-radius:var(--radius);overflow:hidden;box-shadow:0 0 0 1px rgba(255,255,255,.04),0 20px 70px -10px rgba(0,0,0,.7),0 0 80px -30px var(--baysan-red-glow)}
+  @media(max-width:520px){.chat-container{max-height:none;border-radius:0}}
+  .chat-header{padding:0;background:var(--baysan-white);display:flex;flex-direction:column;flex-shrink:0;position:relative;border-bottom:1px solid var(--baysan-gray-100)}
+  .chat-header::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--baysan-red-dark),var(--baysan-red),var(--baysan-red-bright),var(--baysan-red),var(--baysan-red-dark))}
+  .chat-header::after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--baysan-red);opacity:.85}
+  .header-main{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px 14px;position:relative;z-index:1}
+  .header-logo{height:54px;width:auto;flex-shrink:0;display:block}
+  .header-info{text-align:right;flex-shrink:0}
+  .header-info h1{font-family:var(--font-heading);font-size:11.5px;font-weight:700;color:var(--baysan-gray-800);letter-spacing:.14em;text-transform:uppercase}
+  .header-info p{font-size:11px;color:var(--baysan-gray-400);margin-top:4px;display:flex;align-items:center;justify-content:flex-end;gap:6px;font-weight:500}
+  .status-dot{width:7px;height:7px;border-radius:50%;background:#4CD964;animation:pulse-dot 2s ease-in-out infinite;box-shadow:0 0 6px rgba(76,217,100,.35)}
+  @keyframes pulse-dot{0%,100%{opacity:1}50%{opacity:.4}}
+  .chat-messages{flex:1;overflow-y:auto;padding:20px 18px;display:flex;flex-direction:column;gap:5px;scroll-behavior:smooth;background:var(--baysan-offwhite)}
+  .chat-messages::-webkit-scrollbar{width:3px}
+  .chat-messages::-webkit-scrollbar-thumb{background:var(--baysan-gray-200);border-radius:3px}
+  .message{max-width:80%;padding:11px 15px;border-radius:var(--radius);font-size:14.5px;line-height:1.55;animation:msg-in .3s cubic-bezier(.34,1.4,.64,1) both;word-wrap:break-word}
+  @keyframes msg-in{from{opacity:0;transform:translateY(10px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
+  .message.bot{align-self:flex-start;background:var(--baysan-white);color:var(--baysan-gray-800);border-bottom-left-radius:4px;box-shadow:0 1px 4px rgba(0,0,0,.05);border:1px solid var(--baysan-gray-100)}
+  .message.user{align-self:flex-end;background:var(--baysan-red);color:var(--baysan-white);border-bottom-right-radius:4px;font-weight:500;box-shadow:0 2px 10px rgba(194,32,38,.2)}
+  .message.bot+.message.bot{border-top-left-radius:4px}
+  .message.user+.message.user{border-top-right-radius:4px}
+  .msg-time{align-self:center;font-size:11px;color:var(--baysan-gray-400);margin:10px 0 4px;font-weight:500;letter-spacing:.04em}
+  .typing-indicator{align-self:flex-start;display:flex;gap:5px;padding:14px 18px;background:var(--baysan-white);border:1px solid var(--baysan-gray-100);border-radius:var(--radius);border-bottom-left-radius:4px;animation:msg-in .25s ease both;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+  .typing-indicator span{width:7px;height:7px;border-radius:50%;background:var(--baysan-gray-400);animation:typing-bounce 1.4s ease-in-out infinite}
+  .typing-indicator span:nth-child(2){animation-delay:.15s}
+  .typing-indicator span:nth-child(3){animation-delay:.3s}
+  @keyframes typing-bounce{0%,60%,100%{transform:translateY(0);opacity:.35}30%{transform:translateY(-5px);opacity:1}}
+  .chat-input-area{padding:14px 18px;background:var(--baysan-white);border-top:1px solid var(--baysan-gray-100);flex-shrink:0}
+  .input-wrapper{display:flex;align-items:center;gap:10px;background:var(--baysan-offwhite);border:1.5px solid var(--baysan-gray-200);border-radius:26px;padding:4px 5px 4px 18px;transition:border-color .2s,box-shadow .2s}
+  .input-wrapper:focus-within{border-color:var(--baysan-red);box-shadow:0 0 0 3px var(--baysan-red-soft)}
+  .input-wrapper.disabled{opacity:.35;pointer-events:none}
+  .chat-input{flex:1;border:none;background:transparent;color:var(--baysan-gray-800);font-family:var(--font-body);font-size:16px;padding:10px 0;outline:none;min-width:0}
+  .chat-input::placeholder{color:var(--baysan-gray-400)}
+  .send-btn{width:44px;height:44px;border-radius:50%;border:none;background:var(--baysan-red);color:var(--baysan-white);cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .12s,background .2s,box-shadow .2s;-webkit-appearance:none;appearance:none}
+  .send-btn:hover{transform:scale(1.06);background:var(--baysan-red-bright);box-shadow:0 4px 14px rgba(194,32,38,.25)}
+  .send-btn:active{transform:scale(.95)}
+  .send-btn svg{width:18px;height:18px}
+  .download-card{align-self:flex-start;background:var(--baysan-white);border:1px solid var(--baysan-gray-200);border-left:3px solid var(--baysan-red);border-radius:var(--radius-sm);padding:18px;max-width:82%;animation:msg-in .35s cubic-bezier(.34,1.4,.64,1) both;box-shadow:0 2px 12px rgba(0,0,0,.05)}
+  .file-badge{display:inline-flex;align-items:center;gap:5px;background:var(--baysan-offwhite);border:1px solid var(--baysan-gray-200);border-radius:6px;padding:6px 10px;margin-bottom:12px;font-size:11.5px;color:var(--baysan-gray-600);font-weight:500}
+  .file-badge svg{width:14px;height:14px;color:var(--baysan-red)}
+  .download-btn{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;background:linear-gradient(135deg,var(--baysan-red-bright),var(--baysan-red),var(--baysan-red-dark));color:var(--baysan-white);font-family:var(--font-heading);font-size:13px;font-weight:700;border:none;border-radius:8px;cursor:pointer;text-decoration:none;transition:transform .12s,box-shadow .2s;letter-spacing:.04em;text-transform:uppercase}
+  .download-btn:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(194,32,38,.25)}
+  .download-btn:active{transform:translateY(0)}
+  .download-btn svg{width:16px;height:16px}
+  .legal-note{padding:10px 18px calc(12px + env(safe-area-inset-bottom));text-align:center;font-size:10px;color:var(--baysan-gray-400);line-height:1.5;background:var(--baysan-white);border-top:1px solid var(--baysan-gray-100);flex-shrink:0}
+  .legal-note a{color:var(--baysan-red);text-decoration:underline;text-underline-offset:2px}
+  .input-error{border-color:#e74c3c!important;box-shadow:0 0 0 3px rgba(231,76,60,.12)!important}
+  .error-hint{font-size:12px;color:#e74c3c;padding:6px 18px 0;animation:msg-in .2s ease both}
+  .powered-by{position:absolute;bottom:8px;right:12px;font-size:9px;color:rgba(255,255,255,.15);font-family:var(--font-heading);letter-spacing:.05em;z-index:0}
+</style>
+</head>
+<body>
+<div class="chat-container">
+  <div class="chat-header">
+    <div class="header-main">
+      <img src="baysan-logo.png" alt="Baysan Quality" class="header-logo" onerror="this.style.display='none'">
+      <div class="header-info">
+        <h1 id="headerTitle">Asistente</h1>
+        <p><span class="status-dot"></span><span>En línea</span></p>
+      </div>
+    </div>
+  </div>
+  <div class="chat-messages" id="chatMessages"></div>
+  <div class="chat-input-area">
+    <div class="input-wrapper" id="inputWrapper">
+      <input type="email" class="chat-input" id="chatInput" placeholder="tu@email.com" autocomplete="email" inputmode="email" autocapitalize="off" autocorrect="off" spellcheck="false" autofocus>
+      <button class="send-btn" id="sendBtn" aria-label="Enviar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
+    </div>
+    <div id="errorHint"></div>
+  </div>
+  <div class="legal-note">Al facilitar tus datos aceptas que los usemos para enviarte la presentación y comunicaciones relacionadas. <a href="https://baysanquality.com/politica-de-privacidad/" target="_blank" rel="noopener">Política de privacidad</a></div>
+</div>
+<span class="powered-by">BAYSAN QUALITY</span>
+
+<script>
+// CONFIG — edita estas variables tras desplegar el Apps Script.
+// webhookUrl y aiProxyUrl son la MISMA URL del Apps Script desplegado:
+// el script distingue por el campo "action" del body.
+const CONFIG = {
+  headerTitle: "Asistente",
+  downloadUrl: "https://drive.google.com/uc?export=download&id=1VBusjjAMguz92kCIcegeuIQTisYHbPH8",
+  downloadLabel: "Descargar presentación",
+  downloadFilename: "Presentacion-Baysan-Quality.pdf",
+  webhookUrl: "https://script.google.com/macros/s/AKfycbyZ1t7ltPMz3dtoaOf9wjmHtIEDVpijSWLL3Va9f1Hm3Ka2cZUr_8CZaTuVX49fyMcc/exec",
+  aiProxyUrl: "https://script.google.com/macros/s/AKfycbyZ1t7ltPMz3dtoaOf9wjmHtIEDVpijSWLL3Va9f1Hm3Ka2cZUr_8CZaTuVX49fyMcc/exec",
+  enableAI: true,
+  // Anti-abuso de la IA: mínimo entre preguntas (ms) y tope por sesión.
+  aiThrottleMs: 2000,
+  aiMaxPerSession: 25,
+  postNameTemplate: "Gracias, {name}. Aquí tienes la presentación; espero que te resulte útil.",
+  aiOpenerTemplate: "Si te interesa algo más sobre Baysan Quality, pregúntame lo que quieras.",
+  closingTemplate: "Gracias, {name}. Que disfrutes la presentación."
+};
+
+const $m = document.getElementById('chatMessages');
+const $i = document.getElementById('chatInput');
+const $w = document.getElementById('inputWrapper');
+const $b = document.getElementById('sendBtn');
+const $e = document.getElementById('errorHint');
+document.getElementById('headerTitle').textContent = CONFIG.headerTitle;
+
+// Claves de almacenamiento. Subir el sufijo si cambia el formato del transcript.
+const STORAGE_VERSION = 'v1';
+const SESSION_KEY = 'baysanq_session_' + STORAGE_VERSION;
+const QUEUE_KEY = 'baysanq_queue_' + STORAGE_VERSION;
+
+const data = {};
+const history = [];
+const transcript = [];
+let step = 'email';
+let busy = false;
+let webhookFired = false;
+
+const utm = readUTM();
+// Regex de email algo más estricta: TLD mínimo de 2 letras y sin caracteres raros.
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i;
+// Estado anti-abuso de la IA (no se persiste; se reinicia al recargar — aceptable).
+let lastAiCallAt = 0;
+let aiCallCount = 0;
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+const nowTime = () => new Date().toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' });
+const scrollDown = () => requestAnimationFrame(() => { $m.scrollTop = $m.scrollHeight; });
+
+function readUTM() {
+  try {
+    const p = new URLSearchParams(location.search);
+    return {
+      source: p.get('utm_source') || '',
+      medium: p.get('utm_medium') || '',
+      campaign: p.get('utm_campaign') || '',
+      term: p.get('utm_term') || '',
+      content: p.get('utm_content') || '',
+      raw: location.search || ''
+    };
+  } catch (_) {
+    return { source: '', medium: '', campaign: '', term: '', content: '', raw: '' };
+  }
+}
+
+function el(cls) {
+  const e = document.createElement('div');
+  e.className = cls;
+  $m.appendChild(e);
+  scrollDown();
+  return e;
+}
+function addMsg(text, type) { el('message ' + type).textContent = text; }
+
+function showTyping() {
+  const e = document.createElement('div');
+  e.className = 'typing-indicator';
+  e.id = 'typ';
+  e.innerHTML = '<span></span><span></span><span></span>';
+  $m.appendChild(e);
+  scrollDown();
+}
+function hideTyping() {
+  const t = document.getElementById('typ');
+  if (t) t.remove();
+}
+
+function addDownloadCard() {
+  const card = el('download-card');
+  const url = CONFIG.downloadUrl || '';
+  const isPlaceholder = !url || url === '#';
+  if (isPlaceholder) {
+    console.warn('[chatbot] CONFIG.downloadUrl no configurada — el botón de descarga está desactivado.');
+  }
+  const linkAttrs = isPlaceholder
+    ? 'href="#" onclick="return false" style="opacity:.45;cursor:not-allowed"'
+    : 'href="' + escapeAttr(url) + '" target="_blank" rel="noopener"';
+  card.innerHTML =
+    '<div class="file-badge">' +
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>' +
+    escapeHtml(CONFIG.downloadFilename) +
+    '</div>' +
+    '<a ' + linkAttrs + ' class="download-btn">' +
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>' +
+    escapeHtml(CONFIG.downloadLabel) +
+    '</a>';
+}
+
+function escapeHtml(s) { return String(s).replace(/[&<>"']/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c])); }
+function escapeAttr(s) { return escapeHtml(s); }
+
+function disableInput() { $w.classList.add('disabled'); $i.disabled = true; }
+function enableInput() { $w.classList.remove('disabled'); $i.disabled = false; $i.focus(); }
+function showError(msg) {
+  $e.innerHTML = '<div class="error-hint">' + escapeHtml(msg) + '</div>';
+  $w.classList.add('input-error');
+  setTimeout(() => { $e.innerHTML = ''; $w.classList.remove('input-error'); }, 3000);
+}
+
+// === Persistencia (sessionStorage) ===
+// Guardamos el transcript y el estado para poder restaurar si recargan.
+function persist() {
+  try {
+    sessionStorage.setItem(SESSION_KEY, JSON.stringify({
+      data, step, history, transcript, webhookFired
+    }));
+  } catch (_) { /* sin almacenamiento, seguimos */ }
+}
+
+function pushTranscript(item) {
+  transcript.push(item);
+  persist();
+}
+
+function recordTime() {
+  const text = nowTime();
+  el('msg-time').textContent = text;
+  pushTranscript({ kind: 'time', text });
+}
+
+async function sayBot(text) {
+  showTyping();
+  await sleep(Math.min(380 + text.length * 16, 1600));
+  hideTyping();
+  addMsg(text, 'bot');
+  pushTranscript({ kind: 'bot', text });
+}
+
+function recordUser(text) {
+  addMsg(text, 'user');
+  pushTranscript({ kind: 'user', text });
+}
+
+function recordBot(text) {
+  addMsg(text, 'bot');
+  pushTranscript({ kind: 'bot', text });
+}
+
+function recordDownload() {
+  addDownloadCard();
+  pushTranscript({ kind: 'download' });
+}
+
+// Reproduce el transcript guardado sin animación de typing y sin delays.
+function replayTranscript(items) {
+  for (const it of items) {
+    if (it.kind === 'time') {
+      el('msg-time').textContent = it.text;
+    } else if (it.kind === 'bot' || it.kind === 'user') {
+      addMsg(it.text, it.kind);
+    } else if (it.kind === 'download') {
+      addDownloadCard();
+    }
+  }
+}
+
+function tryRestore() {
+  let saved;
+  try {
+    const raw = sessionStorage.getItem(SESSION_KEY);
+    if (!raw) return false;
+    saved = JSON.parse(raw);
+  } catch (_) { return false; }
+  if (!saved || !Array.isArray(saved.transcript) || !saved.transcript.length) return false;
+
+  Object.assign(data, saved.data || {});
+  step = saved.step || 'email';
+  if (Array.isArray(saved.history)) history.push(...saved.history);
+  transcript.push(...saved.transcript);
+  webhookFired = !!saved.webhookFired;
+
+  replayTranscript(saved.transcript);
+  setInputMode(step === 'email' ? 'email' : step === 'name' ? 'name' : 'ai');
+  if (step === 'done') disableInput(); else enableInput();
+  return true;
+}
+
+function setInputMode(mode) {
+  if (mode === 'email') {
+    $i.type = 'email';
+    $i.setAttribute('inputmode', 'email');
+    $i.setAttribute('autocapitalize', 'off');
+    $i.setAttribute('autocorrect', 'off');
+    $i.setAttribute('autocomplete', 'email');
+    $i.placeholder = 'tu@email.com';
+  } else if (mode === 'name') {
+    $i.type = 'text';
+    $i.setAttribute('inputmode', 'text');
+    $i.setAttribute('autocapitalize', 'words');
+    $i.setAttribute('autocorrect', 'on');
+    $i.setAttribute('autocomplete', 'given-name');
+    $i.placeholder = 'Tu nombre';
+  } else {
+    $i.type = 'text';
+    $i.setAttribute('inputmode', 'text');
+    $i.setAttribute('autocapitalize', 'sentences');
+    $i.setAttribute('autocorrect', 'on');
+    $i.removeAttribute('autocomplete');
+    $i.placeholder = 'Escribe tu pregunta...';
+  }
+}
+
+function buildPayload() {
+  return JSON.stringify({
+    action: 'register',
+    name: data.name || '',
+    email: data.email || '',
+    timestamp: new Date().toISOString(),
+    userAgent: navigator.userAgent,
+    language: navigator.language,
+    screenSize: screen.width + 'x' + screen.height,
+    referrer: document.referrer || 'direct',
+    utmSource: utm.source,
+    utmMedium: utm.medium,
+    utmCampaign: utm.campaign,
+    utmTerm: utm.term,
+    utmContent: utm.content,
+    searchParams: utm.raw
+  });
+}
+
+// === Cola local de reintentos ===
+// Si el navegador no consigue mandar el registro, lo guardamos en localStorage
+// y lo reintentamos la próxima vez que se cargue la página en este dispositivo.
+function enqueue(body) {
+  try {
+    const q = JSON.parse(localStorage.getItem(QUEUE_KEY) || '[]');
+    q.push({ body, ts: Date.now() });
+    while (q.length > 20) q.shift();
+    localStorage.setItem(QUEUE_KEY, JSON.stringify(q));
+  } catch (_) { /* sin localStorage, se pierde */ }
+}
+
+function flushQueue() {
+  if (!CONFIG.webhookUrl) return;
+  let q;
+  try { q = JSON.parse(localStorage.getItem(QUEUE_KEY) || '[]'); } catch (_) { return; }
+  if (!q.length) return;
+  const remaining = [];
+  let pending = q.length;
+  const done = () => {
+    pending--;
+    if (pending === 0) {
+      try { localStorage.setItem(QUEUE_KEY, JSON.stringify(remaining)); } catch (_) {}
+    }
+  };
+  q.forEach(item => {
+    fetch(CONFIG.webhookUrl, {
+      method: 'POST',
+      body: item.body,
+      // text/plain evita el preflight CORS — Apps Script lee el cuerpo igual.
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      keepalive: true
+    })
+      .then(r => {
+        if (!r || !r.ok) { remaining.push(item); return; }
+        // Solo damos por enviado si el backend confirma status:'ok'.
+        return r.text().then(text => {
+          try {
+            const j = JSON.parse(text);
+            if (!j || j.status !== 'ok') remaining.push(item);
+          } catch (_) {
+            // Si no es JSON, asumimos fallo y reintentamos.
+            remaining.push(item);
+          }
+        });
+      })
+      .catch(() => remaining.push(item))
+      .finally(done);
+  });
+}
+
+// Disparo "en caliente" — se invoca cuando aún hay tiempo (tras dar el nombre).
+async function fireWebhookNow() {
+  if (webhookFired || !data.email || !CONFIG.webhookUrl) return;
+  webhookFired = true;
+  persist();
+  const body = buildPayload();
+  try {
+    const r = await fetch(CONFIG.webhookUrl, {
+      method: 'POST',
+      body,
+      // text/plain evita el preflight CORS — Apps Script lee el cuerpo igual.
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      keepalive: true
+    });
+    if (!r || !r.ok) enqueue(body);
+  } catch (_) {
+    enqueue(body);
+  }
+}
+
+// Disparo en cierre — síncrono, sin await. Beacon es la vía más fiable.
+function fireWebhookBeacon() {
+  if (webhookFired || !data.email || !CONFIG.webhookUrl) return;
+  // Si el usuario está en el paso del nombre, probablemente acaba de tocar
+  // el botón de descarga (target=_blank dispara visibilitychange en iOS/Android).
+  // No mandamos parcial: damos margen a que vuelva y complete el flujo. Si no
+  // vuelve, perdemos ese lead — trade-off aceptable para eventos en directo.
+  if (step === 'name') return;
+  webhookFired = true;
+  const body = buildPayload();
+  let ok = false;
+  try {
+    if (navigator.sendBeacon) {
+      // text/plain evita preflight; Apps Script lee e.postData.contents igual.
+      ok = navigator.sendBeacon(CONFIG.webhookUrl, new Blob([body], { type: 'text/plain;charset=utf-8' }));
+    }
+  } catch (_) { ok = false; }
+  if (!ok) {
+    try {
+      fetch(CONFIG.webhookUrl, {
+        method: 'POST', body, keepalive: true,
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' }
+      });
+    } catch (_) { enqueue(body); webhookFired = false; }
+  }
+  persist();
+}
+
+window.addEventListener('pagehide', fireWebhookBeacon);
+window.addEventListener('beforeunload', fireWebhookBeacon);
+// visibilitychange es más fiable en iOS Safari que pagehide.
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'hidden') fireWebhookBeacon();
+});
+
+async function askAI(msg) {
+  // Anti-abuso: tope por sesión.
+  if (aiCallCount >= CONFIG.aiMaxPerSession) {
+    return 'Has llegado al máximo de preguntas en esta sesión. Para más información, escribe a info@baysanquality.com.';
+  }
+  // Anti-abuso: throttle entre preguntas.
+  const now = Date.now();
+  const waitMs = CONFIG.aiThrottleMs - (now - lastAiCallAt);
+  if (waitMs > 0) {
+    const seconds = Math.ceil(waitMs / 1000);
+    return 'Espera ' + seconds + ' segundo' + (seconds === 1 ? '' : 's') + ' antes de la siguiente pregunta.';
+  }
+  lastAiCallAt = now;
+  aiCallCount++;
+
+  history.push({ role: 'user', content: msg });
+  if (!CONFIG.aiProxyUrl) {
+    return 'Para más información puedes contactar con info@baysanquality.com.';
+  }
+  // Timeout de 25 s para no dejar el indicador de "escribiendo" colgado.
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 25000);
+  try {
+    const r = await fetch(CONFIG.aiProxyUrl, {
+      method: 'POST',
+      // text/plain evita el preflight CORS contra Apps Script.
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify({
+        action: 'chat',
+        message: msg,
+        history: history.slice(-10),
+        userName: data.name || ''
+      }),
+      signal: controller.signal
+    });
+    const j = await r.json();
+    const reply = j.reply || 'No he podido procesar tu consulta. Inténtalo de nuevo.';
+    history.push({ role: 'assistant', content: reply });
+    return reply;
+  } catch (err) {
+    if (err && err.name === 'AbortError') {
+      return 'La respuesta está tardando demasiado. Inténtalo de nuevo.';
+    }
+    return 'Sin conexión en este momento. Vuelve a intentarlo en unos segundos.';
+  } finally {
+    clearTimeout(timeoutId);
+  }
+}
+
+async function handle() {
+  if (busy) return;
+  const v = $i.value.trim();
+  if (!v) return;
+
+  if (step === 'email') {
+    if (!EMAIL_RE.test(v)) { showError('Revisa el email, no parece válido.'); return; }
+    busy = true;
+    data.email = v;
+    recordUser(v);
+    $i.value = '';
+    disableInput();
+    await sleep(350);
+    await sayBot('Aquí tienes la presentación:');
+    await sleep(150);
+    recordDownload();
+    await sleep(800);
+    await sayBot('Mientras la descargas, ¿cómo te llamas?');
+    step = 'name';
+    setInputMode('name');
+    enableInput();
+    persist();
+    busy = false;
+    return;
+  }
+
+  if (step === 'name') {
+    if (v.length < 2) { showError('Escribe un nombre, por favor.'); return; }
+    busy = true;
+    data.name = v;
+    recordUser(v);
+    $i.value = '';
+    disableInput();
+    fireWebhookNow();
+    await sleep(400);
+    if (CONFIG.enableAI && CONFIG.aiProxyUrl) {
+      await sayBot(CONFIG.postNameTemplate.replace('{name}', v));
+      await sleep(450);
+      await sayBot(CONFIG.aiOpenerTemplate.replace('{name}', v));
+      step = 'ai';
+      setInputMode('ai');
+      enableInput();
+    } else {
+      await sayBot(CONFIG.closingTemplate.replace('{name}', v));
+      step = 'done';
+      disableInput();
+    }
+    persist();
+    busy = false;
+    return;
+  }
+
+  if (step === 'ai') {
+    busy = true;
+    recordUser(v);
+    $i.value = '';
+    disableInput();
+    showTyping();
+    const reply = await askAI(v);
+    hideTyping();
+    recordBot(reply);
+    enableInput();
+    busy = false;
+    return;
+  }
+}
+
+$b.addEventListener('click', handle);
+$i.addEventListener('keydown', e => {
+  if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handle(); }
+});
+
+(async () => {
+  flushQueue();
+  if (tryRestore()) return;
+
+  disableInput();
+  await sleep(350);
+  recordTime();
+  await sayBot('¡Hola! Gracias por tu interés en Baysan Quality.');
+  await sayBot('Indícame tu email y te paso la presentación al instante.');
+  setInputMode('email');
+  enableInput();
+})();
+</script>
+</body>
+</html>
