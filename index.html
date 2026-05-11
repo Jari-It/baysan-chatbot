@@ -178,7 +178,18 @@ function el(cls) {
   scrollDown();
   return e;
 }
-function addMsg(text, type) { el('message ' + type).textContent = text; }
+function addMsg(text, type) {
+  const elemento = el('message ' + type);
+  // Si el mensaje es del bot, buscamos si hay una web para hacerla clickable
+  if (type === 'bot') {
+    const regexWeb = /(https://baysanquality.com/)/g;
+    elemento.innerHTML = text.replace(regexWeb, function(url) {
+      let href = url.startsWith('http') ? url : 'https://' + url;
+      return '<a href="' + href + '" target="_blank" rel="noopener" style="color: inherit; font-weight: bold; text-decoration: underline;">' + url + '</a>';
+    });
+  } else {
+    elemento.textContent = text;
+  }
 
 function showTyping() {
   const e = document.createElement('div');
