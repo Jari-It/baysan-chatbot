@@ -127,7 +127,7 @@ const CONFIG = {
   validateEmailDns: true,
   postNameTemplate: "Gracias, {name}. Aquí tienes la presentación; espero que te resulte útil.",
   aiOpenerTemplate: "Si te interesa algo más sobre Baysan Quality, pregúntame lo que quieras.",
-  closingTemplate: "Gracias, {name}. Que disfrutes la presentación."
+  closingTemplate: "Gracias, {name}. Si quieres saber más sobre nuestros servicios, te dejo nuestra web: https://baysanquality.com/ — o si lo prefieres, llámanos al 96 134 12 32."
 };
 
 const $m = document.getElementById('chatMessages');
@@ -294,8 +294,8 @@ async function sayBot(text) {
   showTyping();
   await sleep(Math.min(380 + text.length * 16, 1600));
   hideTyping();
-  addMsg(text, 'bot');
-  pushTranscript({ kind: 'bot', text });
+  addMsgWithLinks(text, 'bot');
+  pushTranscript({ kind: 'bot', text, links: true });
 }
 
 function recordUser(text) {
